@@ -4,30 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>General Power Tools Tirur | Best Industrial Tools & Spares</title>
-    <meta name="description" content="Visit General Power Tools in Tirur for premium industrial equipment. Authorized dealers for drilling, cutting, welding machines, and genuine spares in Malappuram.">
-    <meta name="keywords" content="Power tools Tirur, Welding machine Tirur, Bosch dealer Tirur, Industrial tools Kerala, Power tool spares, General Power Tools">
-    <meta name="author" content="General Power Tools Tirur">
+    <!-- PRIMARY SEO -->
+    <title>General Power Tools Tirur | Welding Machines & Car Washers Sales & Service</title>
+    <meta name="description" content="Tirur's leading hub for Power Tools, Welding Machines, and Car Washers. Authorized dealers of iBELL, Bosch, Makita & DeWalt. Expert repair services and genuine spares in Malappuram.">
+    <meta name="keywords" content="Power tools Tirur, Car washer service Tirur, Welding machine repair Malappuram, iBELL dealer Kerala, Pressure washer Tirur, General Power Tools, Bosch service Tirur">
     
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="General Power Tools Tirur | Sales & Service">
+    <meta property="og:description" content="Authorized sales and expert service for welding machines, car washers, and industrial power tools in Tirur, Kerala.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://generalpowertoolstirur.com">
+
+    <!-- JSON-LD Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HardwareStore",
+      "name": "General Power Tools Tirur",
+      "image": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80",
+      "url": "https://generalpowertoolstirur.com",
+      "telephone": "+919605891130",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Over Bridge Road",
+        "addressLocality": "Tirur",
+        "addressRegion": "KL",
+        "postalCode": "676101",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 10.9151449,
+        "longitude": 75.9225126
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:30",
+        "closes": "20:00"
+      }
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
+        // Check local storage or system preference to set initial theme
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        'industrial-black': '#1a1a1a',
-                        'industrial-dark': '#2d2d2d',
-                        'safety-orange': '#ff6b00',
-                        'safety-yellow': '#fbbf24',
+                        'primary': '#FF6B00',
+                        'secondary': 'var(--bg-main)',
+                        'accent': '#FFD700',
+                        'dark-gray': 'var(--bg-surface)',
+                        'text-base': 'var(--text-main)',
+                        'text-muted': 'var(--text-muted)',
                     },
                     fontFamily: {
                         'heading': ['Orbitron', 'sans-serif'],
-                        'body': ['Roboto', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
                     }
                 }
             }
@@ -35,275 +80,1056 @@
     </script>
 
     <style>
-        /* Custom scrollbar for that mechanic feel */
+        /* THEME VARIABLES */
+        :root {
+            --bg-main: #FFFFFF;
+            --bg-surface: #F3F4F6;
+            --text-main: #111827;
+            --text-muted: #4B5563;
+            --nav-bg: rgba(255, 255, 255, 0.85);
+            --border-alpha: rgba(0, 0, 0, 0.1);
+            --hero-overlay: rgba(255, 255, 255, 0.85);
+            --map-filter: none;
+        }
+
+        /* Dark Mode Override */
+        html.dark {
+            --bg-main: #0F0F0F;
+            --bg-surface: #1A1A1A;
+            --text-main: #F9FAFB;
+            --text-muted: #9CA3AF;
+            --nav-bg: rgba(15, 15, 15, 0.97);
+            --border-alpha: rgba(255, 255, 255, 0.05);
+            --hero-overlay: rgba(0, 0, 0, 0.85);
+            --map-filter: grayscale(1) invert(1) brightness(0.9) contrast(1.1);
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        /* Enhanced Glass Navigation */
+        .glass-nav { 
+            background: var(--nav-bg); 
+            backdrop-filter: blur(16px);
+            box-shadow: 0 4px 30px rgba(255, 107, 0, 0.1);
+        }
+        
+        /* Hero with Particle Effect */
+        .hero-gradient { 
+            background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), 
+                        url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1950&q=80'); 
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 107, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        /* Floating WhatsApp Button */
+        .floating-wa { 
+            animation: bounce 2s infinite;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+        }
+        
+        @keyframes bounce { 
+            0%, 100% { transform: translateY(0); } 
+            50% { transform: translateY(-10px); } 
+        }
+        
+        /* Enhanced Category Cards */
+        .category-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-alpha);
+        }
+        
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.2), transparent);
+            transition: left 0.7s;
+        }
+        
+        .category-card:hover::before {
+            left: 100%;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(255, 107, 0, 0.3);
+        }
+        
+        .category-card:hover img { 
+            transform: scale(1.15) rotate(2deg); 
+        }
+        
+        /* Stats Counter Animation */
+        .stat-item {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Service Card Hover Effects */
+        .service-box {
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-alpha);
+        }
+        
+        .service-box::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #FF6B00, #FFD700);
+            transition: width 0.4s ease;
+        }
+        
+        .service-box:hover::after {
+            width: 100%;
+        }
+        
+        .service-box:hover {
+            transform: translateX(8px);
+            background: rgba(255, 107, 0, 0.05);
+        }
+        
+        /* Brand Marquee */
+        .brand-marquee {
+            animation: scroll 15s linear infinite;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .brand-logo {
+            /* Removed grayscale filter for visibility */
+            transition: all 0.3s ease;
+        }
+        
+        .brand-logo:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Testimonial Cards */
+        .testimonial-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-alpha);
+            transition: all 0.4s ease;
+        }
+        
+        .testimonial-card:hover {
+            border-color: rgba(255, 107, 0, 0.3);
+            transform: scale(1.02);
+        }
+        
+        /* CTA Pulse Animation */
+        .cta-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 20px rgba(255, 107, 0, 0);
+            }
+        }
+        
+        /* Mobile Menu Slide */
+        #mobile-menu {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        #mobile-menu.active {
+            transform: translateY(0);
+        }
+        
+        /* Loading Animation */
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #FF6B00;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            animation: rotation 1s linear infinite;
+        }
+        
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Smooth Reveal on Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
         }
+        
         ::-webkit-scrollbar-track {
-            background: #1a1a1a;
+            background: #0F0F0F;
         }
+        
         ::-webkit-scrollbar-thumb {
-            background: #ff6b00;
-            border-radius: 5px;
+            background: linear-gradient(180deg, #FF6B00, #FFD700);
+            border-radius: 10px;
         }
-        .hero-bg {
-            /* Placeholder for a real workshop image. Replace URL with your own. */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF6B00;
+        }
+        
+        /* Map Theme Filter */
+        .map-container {
+            filter: var(--map-filter);
+            transition: filter 0.5s ease;
         }
     </style>
 </head>
-<body class="bg-industrial-black text-gray-200 font-body antialiased">
+<body class="bg-secondary text-text-base font-body">
 
-    <nav class="fixed w-full z-50 bg-industrial-dark/95 border-b border-gray-700 backdrop-blur-sm">
+    <!-- FLOATING CONTACTS -->
+    <div class="fixed bottom-6 right-6 z-[100] flex flex-col gap-4">
+        <a href="tel:+919605891130" class="bg-gradient-to-br from-blue-600 to-blue-700 p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 md:hidden group">
+            <i class="fa-solid fa-phone text-white text-2xl group-hover:rotate-12 transition-transform"></i>
+        </a>
+        <a href="https://wa.me/919605891130?text=Hi, I am interested in your tools and service" target="_blank" class="floating-wa bg-gradient-to-br from-green-500 to-green-600 p-4 rounded-full hover:scale-110 transition-transform duration-300 group">
+            <i class="fa-brands fa-whatsapp text-white text-3xl group-hover:scale-110 transition-transform"></i>
+        </a>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-black/5 dark:border-white/5 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0">
-                    <a href="#" class="flex items-center gap-2">
-                        <i class="fa-solid fa-gear text-safety-orange text-3xl fa-spin-pulse" style="--fa-animation-duration: 3s;"></i>
-                        <span class="font-heading font-bold text-xl tracking-wider text-white">GENERAL <span class="text-safety-orange">POWER TOOLS</span></span>
-                    </a>
-                </div>
-                
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="hover:text-safety-orange transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        <a href="#products" class="hover:text-safety-orange transition-colors px-3 py-2 rounded-md text-sm font-medium">Categories</a>
-                        <a href="#about" class="hover:text-safety-orange transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#contact" class="bg-safety-orange text-white hover:bg-orange-700 px-4 py-2 rounded-md text-sm font-bold transition-transform hover:scale-105">Contact Us</a>
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="bg-gradient-to-br from-primary to-orange-600 p-2 rounded flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+                        <i class="fa-solid fa-bolt-lightning text-white text-xl"></i>
                     </div>
+                    <div>
+                        <span class="font-heading font-extrabold text-xl block leading-none tracking-tight group-hover:text-primary transition-colors text-text-base">GENERAL</span>
+                        <span class="text-primary text-[9px] tracking-[0.4em] font-bold uppercase">Power Tools Tirur</span>
+                    </div>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="nav-link text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full text-text-base">Home</a>
+                    <a href="#products" class="nav-link text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full text-text-base">Sales</a>
+                    <a href="#service" class="nav-link text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full text-text-base">Service</a>
+                    <a href="#testimonials" class="nav-link text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full text-text-base">Reviews</a>
+                    
+                    <!-- Theme Toggle (Desktop) -->
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-black/5 dark:bg-white/5 hover:scale-110 transition-all border border-transparent hover:border-primary/30">
+                        <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden text-text-base"></i>
+                        <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden text-primary"></i>
+                    </button>
+
+                    <a href="#contact" class="bg-gradient-to-r from-primary to-orange-600 px-6 py-2.5 rounded font-bold text-xs uppercase tracking-widest hover:brightness-110 transition-all hover:scale-105 shadow-lg text-white">Contact</a>
                 </div>
 
-                <div class="-mr-2 flex md:hidden">
-                    <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl"></i>
+                <div class="flex items-center gap-4 md:hidden">
+                    <!-- Theme Toggle (Mobile) -->
+                    <button id="theme-toggle-mobile" class="p-2 rounded-lg bg-black/5 dark:bg-white/5 text-primary">
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="text-2xl text-primary hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bars-staggered" id="menu-icon"></i>
                     </button>
                 </div>
             </div>
         </div>
-
-        <div class="md:hidden hidden bg-industrial-dark border-t border-gray-700" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" onclick="toggleMenu()" class="text-gray-300 hover:text-safety-orange block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="#products" onclick="toggleMenu()" class="text-gray-300 hover:text-safety-orange block px-3 py-2 rounded-md text-base font-medium">Categories</a>
-                <a href="#about" onclick="toggleMenu()" class="text-gray-300 hover:text-safety-orange block px-3 py-2 rounded-md text-base font-medium">About</a>
-                <a href="#contact" onclick="toggleMenu()" class="text-safety-orange font-bold block px-3 py-2 rounded-md text-base">Contact Us</a>
-            </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-gray border-b border-white/10 p-6 space-y-4">
+            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-lg font-bold hover:text-primary transition-colors text-text-base">Home</a>
+            <a href="#products" onclick="toggleMobileMenu()" class="block py-2 text-lg font-bold hover:text-primary transition-colors text-text-base">Sales</a>
+            <a href="#service" onclick="toggleMobileMenu()" class="block py-2 text-lg font-bold hover:text-primary transition-colors text-text-base">Service & Spares</a>
+            <a href="#testimonials" onclick="toggleMobileMenu()" class="block py-2 text-lg font-bold hover:text-primary transition-colors text-text-base">Reviews</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-primary font-black uppercase">Contact Now</a>
         </div>
     </nav>
 
-    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-4">
-        <div class="max-w-4xl mx-auto" data-aos="fade-up">
-            <h2 class="text-safety-orange font-heading text-lg md:text-xl tracking-[0.2em] mb-4 uppercase">Reliable & Robust</h2>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-heading">
-                POWERING TIRUR'S <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-safety-orange to-safety-yellow">INDUSTRY</span>
-            </h1>
-            <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-                The most trusted destination in Malappuram for professional-grade power tools, precision machinery, and genuine spare parts.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#products" class="bg-safety-orange text-white px-8 py-4 rounded font-bold text-lg hover:bg-orange-700 transition duration-300 shadow-[0_0_20px_rgba(255,107,0,0.3)]">
-                    Explore Products
-                </a>
-                <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded font-bold text-lg hover:bg-white hover:text-black transition duration-300">
-                    Locate Shop
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="products" class="py-20 bg-industrial-black">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">Our <span class="text-safety-orange">Categories</span></h2>
-                <div class="h-1 w-24 bg-safety-orange mx-auto rounded"></div>
-                <p class="mt-4 text-gray-400">Everything you need for your workshop, construction site, or home project.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="group bg-industrial-dark p-6 rounded-lg border border-gray-700 hover:border-safety-orange transition duration-300 hover:-translate-y-2">
-                    <div class="h-14 w-14 bg-gray-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-safety-orange transition-colors">
-                        <i class="fa-solid fa-screwdriver-wrench text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2 font-heading">Drilling Tools</h3>
-                    <p class="text-gray-400 text-sm mb-4">Rotary hammers, impact drills, and heavy-duty breakers from top brands.</p>
-                    <ul class="text-gray-500 text-sm list-disc pl-4 space-y-1">
-                        <li>Cordless Drills</li>
-                        <li>Hammer Drills</li>
-                        <li>Drill Bits</li>
-                    </ul>
+    <!-- HERO SECTION -->
+    <header id="home" class="hero-gradient min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-8 reveal">
+                <div class="inline-flex items-center gap-2 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-4 py-1.5 rounded-full backdrop-blur-sm hover:bg-black/10 dark:hover:bg-white/10 transition-all">
+                    <div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                    <span class="text-[10px] font-black text-primary tracking-[0.2em] uppercase">Trusted in Tirur Since 2002</span>
                 </div>
-
-                <div class="group bg-industrial-dark p-6 rounded-lg border border-gray-700 hover:border-safety-orange transition duration-300 hover:-translate-y-2">
-                    <div class="h-14 w-14 bg-gray-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-safety-orange transition-colors">
-                        <i class="fa-solid fa-scissors text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2 font-heading">Cutting & Grinding</h3>
-                    <p class="text-gray-400 text-sm mb-4">Precision angle grinders, marble cutters, and chop saws for metal and wood.</p>
-                    <ul class="text-gray-500 text-sm list-disc pl-4 space-y-1">
-                        <li>Angle Grinders</li>
-                        <li>Marble Cutters</li>
-                        <li>Circular Saws</li>
-                    </ul>
-                </div>
-
-                <div class="group bg-industrial-dark p-6 rounded-lg border border-gray-700 hover:border-safety-orange transition duration-300 hover:-translate-y-2">
-                    <div class="h-14 w-14 bg-gray-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-safety-orange transition-colors">
-                        <i class="fa-solid fa-fire-burner text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2 font-heading">Welding Solutions</h3>
-                    <p class="text-gray-400 text-sm mb-4">Inverter welding machines, safety gear, electrodes, and accessories.</p>
-                    <ul class="text-gray-500 text-sm list-disc pl-4 space-y-1">
-                        <li>ARC Inverters</li>
-                        <li>Safety Helmets</li>
-                        <li>Electrodes</li>
-                    </ul>
-                </div>
-
-                <div class="group bg-industrial-dark p-6 rounded-lg border border-gray-700 hover:border-safety-orange transition duration-300 hover:-translate-y-2">
-                    <div class="h-14 w-14 bg-gray-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-safety-orange transition-colors">
-                        <i class="fa-solid fa-gears text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2 font-heading">Service & Spares</h3>
-                    <p class="text-gray-400 text-sm mb-4">Genuine spare parts and armatures to keep your machines running longer.</p>
-                    <ul class="text-gray-500 text-sm list-disc pl-4 space-y-1">
-                        <li>Armatures</li>
-                        <li>Carbon Brushes</li>
-                        <li>Switches</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-16 bg-gradient-to-b from-industrial-dark to-industrial-black">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gray-800/50 rounded-2xl p-8 md:p-12 border border-gray-700 flex flex-col md:flex-row items-center gap-10">
-                <div class="flex-1">
-                    <h3 class="text-2xl font-heading font-bold text-white mb-4">Why General Power Tools?</h3>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        Serving Tirur and surrounding areas for over a decade, we pride ourselves on selling only <strong>authentic</strong> products. We understand that downtime costs money, which is why we stock essential spares and offer expert advice to get you the right tool for the job.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-safety-orange"></i>
-                            <span class="text-sm font-medium">Genuine Parts</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-safety-orange"></i>
-                            <span class="text-sm font-medium">Warranty Support</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-safety-orange"></i>
-                            <span class="text-sm font-medium">Expert Advice</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-safety-orange"></i>
-                            <span class="text-sm font-medium">Competitive Prices</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex-1 w-full">
-                     <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Shop Interior" class="rounded-lg shadow-xl w-full h-64 object-cover border-2 border-gray-600">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 bg-industrial-black relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">Get In <span class="text-safety-orange">Touch</span></h2>
-                <div class="h-1 w-24 bg-safety-orange mx-auto rounded"></div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="space-y-8">
-                    <div class="bg-industrial-dark p-8 rounded-lg border border-gray-700">
-                        <h3 class="text-xl font-bold text-white mb-6 font-heading">Visit Our Shop</h3>
-                        
-                        <div class="flex items-start gap-4 mb-6">
-                            <div class="bg-gray-800 p-3 rounded text-safety-orange">
-                                <i class="fa-solid fa-location-dot text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold">Address</h4>
-                                <p class="text-gray-400">General Power Tools,<br>Main Road, Tirur,<br>Malappuram, Kerala - 676101</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4 mb-6">
-                            <div class="bg-gray-800 p-3 rounded text-safety-orange">
-                                <i class="fa-solid fa-phone text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold">Call Us</h4>
-                                <p class="text-gray-400"><a href="tel:+919605891130" class="hover:text-white">+91 96058 91130</a></p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="bg-gray-800 p-3 rounded text-safety-orange">
-                                <i class="fa-solid fa-clock text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold">Working Hours</h4>
-                                <p class="text-gray-400">Mon - Sat: 8:30 AM - 8:00 PM<br>Sunday: Closed</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="https://wa.me/919605891130?text=Hi,%20I%20am%20interested%20in%20power%20tools" target="_blank" class="block w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg text-center transition duration-300 flex items-center justify-center gap-3">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i>
-                        Chat on WhatsApp
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-heading font-black leading-[0.9] text-text-base">
+                    WELD. <br>WASH. <br><span class="text-primary bg-clip-text">BUILD.</span>
+                </h1>
+                <p class="text-text-muted text-lg md:text-xl max-w-lg leading-relaxed">
+                    Premium Sales & Service for Professional <span class="text-text-base font-semibold">Welding Machines</span>, <span class="text-text-base font-semibold">High-Pressure Car Washers</span>, and <span class="text-text-base font-semibold">Industrial Power Tools</span>.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#products" class="bg-gradient-to-r from-primary to-orange-600 text-white px-10 py-5 rounded-lg font-black uppercase tracking-widest text-sm hover:translate-y-[-3px] transition-all shadow-2xl shadow-primary/40 hover:shadow-primary/60 cta-pulse">
+                        Explore Catalog
+                    </a>
+                    <a href="tel:+919605891130" class="bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-10 py-5 rounded-lg font-black uppercase tracking-widest text-sm hover:bg-black/10 dark:hover:bg-white/20 transition-all backdrop-blur-sm hover:border-primary/50 text-text-base">
+                        <i class="fa-solid fa-phone mr-2"></i>Call for Price
                     </a>
                 </div>
+                
+                <!-- Stats Counter -->
+                <div class="grid grid-cols-3 gap-6 pt-8 border-t border-black/10 dark:border-white/10">
+                    <div class="stat-item text-center" style="animation-delay: 0.1s">
+                        <div class="text-3xl md:text-4xl font-heading font-black text-primary">20+</div>
+                        <div class="text-xs text-text-muted uppercase mt-1 font-semibold">Years</div>
+                    </div>
+                    <div class="stat-item text-center" style="animation-delay: 0.2s">
+                        <div class="text-3xl md:text-4xl font-heading font-black text-primary">300k+</div>
+                        <div class="text-xs text-text-muted uppercase mt-1 font-semibold">Customers</div>
+                    </div>
+                    <div class="stat-item text-center" style="animation-delay: 0.3s">
+                        <div class="text-3xl md:text-4xl font-heading font-black text-primary">100%</div>
+                        <div class="text-xs text-text-muted uppercase mt-1 font-semibold">Genuine</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Image/Visual -->
+            <div class="hidden md:block relative">
+                <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl blur-3xl"></div>
+                <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=800&q=80" alt="Power Tools" class="relative rounded-3xl shadow-2xl border border-black/10 dark:border-white/10 hover:scale-105 transition-transform duration-700">
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block animate-bounce opacity-30">
+            <i class="fa-solid fa-chevron-down text-2xl text-text-base"></i>
+        </div>
+    </header>
 
-                <div class="h-full min-h-[400px] bg-gray-800 rounded-lg overflow-hidden border border-gray-700 relative group">
+    <!-- BRAND LINEUP -->
+    <section class="py-20 bg-secondary border-y border-black/5 dark:border-white/5 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-center text-text-muted uppercase text-xs font-black tracking-[0.3em] mb-10">Authorized Dealers Of</p>
+            <div class="relative">
+                <div class="flex items-center gap-16 md:gap-24 brand-marquee">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Bosch_logo.png" alt="Bosch" class="h-8 md:h-10 brand-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Makita_Logo.svg/960px-Makita_Logo.svg.png" alt="Makita" class="h-8 md:h-10 brand-logo">
+                    <img src="https://m.media-amazon.com/images/S/aplus-media/sc/2424314a-7109-461a-b0b3-d79ec5188c99.__CR0,0,600,180_PT0_SX600_V1___.jpg" alt="iBELL" class="h-10 md:h-12 brand-logo">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/dewalt-4-logo-png-transparent.png" alt="DeWalt" class="h-8 md:h-10 brand-logo">
+                    <img src="https://cdn.worldvectorlogo.com/logos/hikoki.svg" alt="HiKOKI" class="h-8 md:h-10 brand-logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpeierO8Q_o3QXzS9U4paXQ0eROeNk8DlrAw&s" alt="TOTAL" class="h-8 md:h-10 brand-logo">
+                    <img src="https://www.qualitytools.co.nz/images/ISL%20Industrial/klogo.jpg" alt="ken" class="h-8 md:h-10 brand-logo">
+                    <img src="https://jcbcea.com.au/wp-content/uploads/2024/11/JCB-logo-black-1024x319.gif" alt="JCB" class="h-8 md:h-10 brand-logo">
+                    <!-- Duplicate logos for seamless scrolling -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Bosch_logo.png" alt="Bosch" class="h-8 md:h-10 brand-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Makita_Logo.svg/960px-Makita_Logo.svg.png" alt="Makita" class="h-8 md:h-10 brand-logo">
+                    <img src="https://m.media-amazon.com/images/S/aplus-media/sc/2424314a-7109-461a-b0b3-d79ec5188c99.__CR0,0,600,180_PT0_SX600_V1___.jpg" alt="iBELL" class="h-10 md:h-12 brand-logo">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/dewalt-4-logo-png-transparent.png" alt="DeWalt" class="h-8 md:h-10 brand-logo">
+                    <img src="https://cdn.worldvectorlogo.com/logos/hikoki.svg" alt="HiKOKI" class="h-8 md:h-10 brand-logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpeierO8Q_o3QXzS9U4paXQ0eROeNk8DlrAw&s" alt="TOTAL" class="h-8 md:h-10 brand-logo">
+                    <img src="https://www.qualitytools.co.nz/images/ISL%20Industrial/klogo.jpg" alt="ken" class="h-8 md:h-10 brand-logo">
+                    <img src="https://jcbcea.com.au/wp-content/uploads/2024/11/JCB-logo-black-1024x319.gif" alt="JCB" class="h-8 md:h-10 brand-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT CATEGORIES -->
+    <section id="products" class="py-24 bg-dark-gray relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-20 reveal">
+                <p class="text-primary uppercase text-xs font-black tracking-[0.3em] mb-4">What We Offer</p>
+                <h2 class="text-4xl md:text-6xl font-heading font-black mb-6 uppercase text-text-base">Heavy Duty <span class="text-primary">Sales</span></h2>
+                <p class="text-text-muted max-w-2xl mx-auto text-lg">Specialized equipment for professionals, contractors, and DIY enthusiasts.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Welding -->
+                <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
+                        <img src="https://rukminim2.flixcart.com/image/480/640/xif0q/welding-machine/v/j/m/220-mig-mag-mma-3-in-1-multiprocess-ibell-original-imah8ac4jbphnnfq.jpeg?q=90" alt="Welding Machines" class="w-full h-full object-cover transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-primary/10 rounded flex items-center justify-center">
+                                <i class="fa-solid fa-fire text-primary text-sm"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-heading uppercase tracking-tighter text-text-base">Welding Inverters</h3>
+                        </div>
+                        <p class="text-text-muted text-sm leading-relaxed mb-4">Latest IGBT technology, ARC/MIG/TIG welding machines and accessories.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary text-[10px] font-black uppercase tracking-widest">Sales & Service</span>
+                            <i class="fa-solid fa-arrow-right text-primary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pressure Washers -->
+                <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2024/1/382084450/JJ/FJ/HH/156739558/makita-hw1200-high-pressure-washer.jpg" alt="Pressure Washers" class="w-full h-full object-cover transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-primary/10 rounded flex items-center justify-center">
+                                <i class="fa-solid fa-droplet text-primary text-sm"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-heading uppercase tracking-tighter text-text-base">Pressure Washers</h3>
+                        </div>
+                        <p class="text-text-muted text-sm leading-relaxed mb-4">High-pressure car washers for commercial garages and home use.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary text-[10px] font-black uppercase tracking-widest">Authorized Dealer</span>
+                            <i class="fa-solid fa-arrow-right text-primary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Angle Grinders -->
+                <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
+                        <img src="https://hikoki.co.nz/wp-content/uploads/2020/02/G3623DA_APP_1.jpg" alt="Angle Grinders" class="w-full h-full object-cover transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-primary/10 rounded flex items-center justify-center">
+                                <i class="fa-solid fa-gears text-primary text-sm"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-heading uppercase tracking-tighter text-text-base">Angle Grinders</h3>
+                        </div>
+                        <p class="text-text-muted text-sm leading-relaxed mb-4">Heavy-duty grinders, marble cutters, and chop saws from top brands.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary text-[10px] font-black uppercase tracking-widest">Genuine Spares</span>
+                            <i class="fa-solid fa-arrow-right text-primary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Power Drills -->
+                <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
+                        <img src="https://grainger-prod.adobecqms.net/content/dam/grainger/gus/en/public/digital-tactics/know-how/hero/SS-KH_power-drill-buying-guide-HRO.jpg" alt="Power Drills" class="w-full h-full object-cover transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-primary/10 rounded flex items-center justify-center">
+                                <i class="fa-solid fa-screwdriver-wrench text-primary text-sm"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-heading uppercase tracking-tighter text-text-base">Power Drills</h3>
+                        </div>
+                        <p class="text-text-muted text-sm leading-relaxed mb-4">Impact drills, rotary hammers, and demolition breakers for heavy work.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary text-[10px] font-black uppercase tracking-widest">Warranty Support</span>
+                            <i class="fa-solid fa-arrow-right text-primary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chainsaws -->
+                <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoJH33ylySfDQxAT697xPbRQboYPx59YymTQ&s" alt="Chainsaws" class="w-full h-full object-cover transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-primary/10 rounded flex items-center justify-center">
+                                <i class="fa-solid fa-tree text-primary text-sm"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-heading uppercase tracking-tighter text-text-base">Chainsaws</h3>
+                        </div>
+                        <p class="text-text-muted text-sm leading-relaxed mb-4">Professional electric and petrol chainsaws for timber cutting.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary text-[10px] font-black uppercase tracking-widest">Heavy Duty</span>
+                            <i class="fa-solid fa-arrow-right text-primary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brush Cutters -->
+                <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
+                        <img src="https://4.imimg.com/data4/LT/TQ/MY-22024832/brass-cutter.jpg" alt="Brush Cutters" class="w-full h-full object-cover transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-primary/10 rounded flex items-center justify-center">
+                                <i class="fa-solid fa-leaf text-primary text-sm"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-heading uppercase tracking-tighter text-text-base">Brush Cutters</h3>
+                        </div>
+                        <p class="text-text-muted text-sm leading-relaxed mb-4">Petrol and electric brush cutters for lawn and garden maintenance.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary text-[10px] font-black uppercase tracking-widest">Garden Tools</span>
+                            <i class="fa-solid fa-arrow-right text-primary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Air Compressors -->
+                <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
+                        <img src="https://images.jdmagicbox.com/quickquotes/images_main/2-hp-ac-single-phase-200-litre-double-cylinder-reciprocating-air-compressor-maximum-flow-rate-cfm-150-cfm-2217265073-gf92nnoe.jpg" alt="Air Compressors" class="w-full h-full object-cover transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-primary/10 rounded flex items-center justify-center">
+                                <i class="fa-solid fa-wind text-primary text-sm"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-heading uppercase tracking-tighter text-text-base">Air Compressors</h3>
+                        </div>
+                        <p class="text-text-muted text-sm leading-relaxed mb-4">Industrial air compressors and pneumatic tools for workshops.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary text-[10px] font-black uppercase tracking-widest">Industrial Grade</span>
+                            <i class="fa-solid fa-arrow-right text-primary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heat Guns & Blowers -->
+                <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
+                        <img src="https://m.media-amazon.com/images/I/71lUlxq+IZL._AC_UF1000,1000_QL80_.jpg" alt="Heat Guns" class="w-full h-full object-cover transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-primary/10 rounded flex items-center justify-center">
+                                <i class="fa-solid fa-temperature-high text-primary text-sm"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-heading uppercase tracking-tighter text-text-base">Heat Guns & Blowers</h3>
+                        </div>
+                        <p class="text-text-muted text-sm leading-relaxed mb-4">Hot air guns, industrial blowers for paint stripping and more.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary text-[10px] font-black uppercase tracking-widest">Professional Use</span>
+                            <i class="fa-solid fa-arrow-right text-primary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Features -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 reveal">
+                <div class="text-center p-6 bg-secondary/50 rounded-xl border border-black/5 dark:border-white/5 hover:border-primary/30 transition-all">
+                    <i class="fa-solid fa-certificate text-primary text-3xl mb-3"></i>
+                    <p class="text-sm font-bold text-text-base">100% Genuine Products</p>
+                </div>
+                <div class="text-center p-6 bg-secondary/50 rounded-xl border border-black/5 dark:border-white/5 hover:border-primary/30 transition-all">
+                    <i class="fa-solid fa-wrench text-primary text-3xl mb-3"></i>
+                    <p class="text-sm font-bold text-text-base">Fast Service</p>
+                </div>
+                <div class="text-center p-6 bg-secondary/50 rounded-xl border border-black/5 dark:border-white/5 hover:border-primary/30 transition-all">
+                    <i class="fa-solid fa-shield-halved text-primary text-3xl mb-3"></i>
+                    <p class="text-sm font-bold text-text-base">Official Warranty</p>
+                </div>
+                <div class="text-center p-6 bg-secondary/50 rounded-xl border border-black/5 dark:border-white/5 hover:border-primary/30 transition-all">
+                    <i class="fa-solid fa-headset text-primary text-3xl mb-3"></i>
+                    <p class="text-sm font-bold text-text-base">Expert Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE SECTION -->
+    <section id="service" class="py-24 bg-secondary relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-80 h-80 bg-primary/5 rounded-full blur-[100px]"></div>
+        <div class="max-w-7xl mx-auto px-4 relative">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8 reveal">
+                    <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full">
+                        <i class="fa-solid fa-wrench text-primary text-xs"></i>
+                        <span class="text-[10px] font-black text-primary tracking-[0.2em] uppercase">Professional Service</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-heading font-black leading-tight uppercase text-text-base">Master <br><span class="text-primary">Tool Repair</span></h2>
+                    <p class="text-text-muted text-lg leading-relaxed">
+                        We don't just sell tools—we make sure they keep working. Our Tirur service center is equipped to handle mechanical repairs for all major brands with expert technicians.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="service-box p-5 bg-dark-gray border-l-4 border-primary rounded-r-lg">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-spray-can text-primary text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-text-base mb-1 uppercase text-sm">Car Washer Service</h4>
+                                    <p class="text-text-muted text-xs">Pump repairs & pressure tuning.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-box p-5 bg-dark-gray border-l-4 border-primary rounded-r-lg">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-bolt text-primary text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-text-base mb-1 uppercase text-sm">Welding Machines</h4>
+                                    <p class="text-text-muted text-xs">PCB checking & component repair.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-box p-5 bg-dark-gray border-l-4 border-primary rounded-r-lg">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-gear text-primary text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-text-base mb-1 uppercase text-sm">Mechanical Overhaul</h4>
+                                    <p class="text-text-muted text-xs">Gear replacement & tool body repair.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-box p-5 bg-dark-gray border-l-4 border-primary rounded-r-lg">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-box text-primary text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-text-base mb-1 uppercase text-sm">Genuine Spares</h4>
+                                    <p class="text-text-muted text-xs">Original brushes, switches & gears.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-6 pt-6 border-t border-black/10 dark:border-white/10">
+                        <div class="flex -space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-orange-600 flex items-center justify-center border-2 border-secondary">
+                                <i class="fa-solid fa-user text-white text-sm"></i>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center border-2 border-secondary">
+                                <i class="fa-solid fa-user text-white text-sm"></i>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-green-600 to-green-700 flex items-center justify-center border-2 border-secondary">
+                                <i class="fa-solid fa-user text-white text-sm"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-bold text-text-base">Trained Technicians</p>
+                            <p class="text-text-muted text-xs">Certified by manufacturers</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative group reveal">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl rotate-3 group-hover:rotate-0 transition duration-500"></div>
+                    <div class="relative bg-dark-gray p-8 md:p-10 rounded-3xl border border-black/5 dark:border-white/10 shadow-2xl">
+                        <h4 class="text-2xl font-heading font-black mb-8 uppercase text-center text-text-base">Service Inquiry</h4>
+                        <form onsubmit="event.preventDefault(); submitServiceForm()" class="space-y-6">
+                            <div>
+                                <label class="block text-[10px] uppercase font-black text-text-muted mb-2 tracking-widest">Select Equipment</label>
+                                <select id="tool-service" class="w-full bg-secondary border border-black/5 dark:border-white/5 p-4 rounded-xl focus:outline-none focus:border-primary transition font-semibold text-sm hover:border-black/20 dark:hover:border-white/20 text-text-base">
+                                    <option>Car Washer / Pressure Pump</option>
+                                    <option>Welding Machine</option>
+                                    <option>Angle Grinder / Cutter</option>
+                                    <option>Demolition Hammer / Drill</option>
+                                    <option>Chainsaw</option>
+                                    <option>Brush Cutter</option>
+                                    <option>Air Compressor</option>
+                                    <option>Heat Gun / Blower</option>
+                                    <option>Spare Parts Purchase</option>
+                                    <option>Other Equipment</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-gradient-to-r from-primary to-orange-600 py-5 rounded-xl font-black uppercase tracking-widest text-sm text-white hover:brightness-110 shadow-xl shadow-primary/20 transition-all hover:scale-105 group">
+                                Contact Technician
+                                <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                            </button>
+                        </form>
+                        
+                        <div class="mt-8 p-4 bg-primary/5 border border-primary/20 rounded-lg">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-clock text-primary text-xl"></i>
+                                <div>
+                                    <p class="text-text-base font-bold text-sm mb-1">Quick Turnaround</p>
+                                    <p class="text-text-muted text-xs">Most repairs completed within 24-48 hours</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-24 bg-dark-gray relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <p class="text-primary uppercase text-xs font-black tracking-[0.3em] mb-4">Customer Stories</p>
+                <h2 class="text-4xl md:text-6xl font-heading font-black mb-6 uppercase text-text-base">What Our <span class="text-primary">Clients Say</span></h2>
+                <p class="text-text-muted max-w-2xl mx-auto">Trusted by contractors, workshops, and businesses across Malappuram</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-2xl reveal">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fa-solid fa-star text-accent"></i>
+                        <i class="fa-solid fa-star text-accent"></i>
+                        <i class="fa-solid fa-star text-accent"></i>
+                        <i class="fa-solid fa-star text-accent"></i>
+                        <i class="fa-solid fa-star text-accent"></i>
+                    </div>
+                    <p class="text-text-muted leading-relaxed mb-6 italic">"Best place in Tirur for power tools. Genuine products and excellent after-sales service. My welding machine has been running perfectly for 3 years!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-orange-600 flex items-center justify-center">
+                            <span class="font-bold text-white">AK</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-text-base">Abdul Kareem</p>
+                            <p class="text-text-muted text-xs">Contractor, Tirur</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card p-8 rounded-2xl reveal" style="animation-delay: 0.1s">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fa-solid fa-star text-accent"></i>
+                        <i class="fa-solid fa-star text-accent"></i>
+                        <i class="fa-solid fa-star text-accent"></i>
+                        <i class="fa-solid fa-star text-accent"></i>
+                        <i class="fa-solid fa-star text-accent"></i>
+                    </div>
+                    <p class="text-text-muted leading-relaxed mb-6 italic">"Quick service and genuine spares. They repaired my car washer pump in just one day. Very professional team. Highly recommended!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center">
+                            <span class="font-bold text-white">RS</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-text-base">Rasheed Salim</p>
+                            <p class="text-text-muted text-xs">Workshop Owner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card p-8 rounded-2xl reveal" style="animation-delay: 0.2s">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fa-solid fa-star text-accent"></i>
+                        <i class="fa-solid fa-star text-accent"></i>
+                        <i class="fa-solid fa-star text-accent"></i>
+                        <i class="fa-solid fa-star text-accent"></i>
+                        <i class="fa-solid fa-star text-accent"></i>
+                    </div>
+                    <p class="text-text-muted leading-relaxed mb-6 italic">"Bought a Bosch angle grinder last year. Still working like new. The owner gives honest advice and doesn't push expensive items unnecessarily."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-green-600 to-green-700 flex items-center justify-center">
+                            <span class="font-bold text-white">MH</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-text-base">Mohammed Haneef</p>
+                            <p class="text-text-muted text-xs">Fabricator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & MAP -->
+    <section id="contact" class="py-24 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-3xl border border-black/5 dark:border-white/5">
+                <div class="bg-dark-gray p-12 md:p-16 flex flex-col justify-center">
+                    <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full mb-8 w-fit">
+                        <i class="fa-solid fa-location-dot text-primary text-xs"></i>
+                        <span class="text-[10px] font-black text-primary tracking-[0.2em] uppercase">Visit Our Store</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-heading font-black mb-10 uppercase leading-tight text-text-base">Find Us In <br><span class="text-primary">Tirur</span></h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-6 group hover:translate-x-2 transition-transform">
+                            <div class="w-14 h-14 bg-gradient-to-br from-primary to-orange-600 flex items-center justify-center rounded-xl shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-location-dot text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-text-base mb-2 uppercase text-xs tracking-widest">Our Address</h4>
+                                <p class="text-text-muted text-sm leading-relaxed">General Power Tools, Over Bridge Road, Tirur 676101, Malappuram, Kerala</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-6 group hover:translate-x-2 transition-transform">
+                            <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center rounded-xl shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-phone text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-text-base mb-2 uppercase text-xs tracking-widest">Hotline</h4>
+                                <a href="tel:+919605891130" class="text-primary font-black text-2xl tracking-tighter hover:text-accent transition-colors">+91 96058 91130</a>
+                                <p class="text-text-muted text-xs mt-1">Call us for instant support</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-6 group hover:translate-x-2 transition-transform">
+                            <div class="w-14 h-14 bg-gradient-to-br from-green-600 to-green-700 flex items-center justify-center rounded-xl shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-clock text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-text-base mb-2 uppercase text-xs tracking-widest">Open Hours</h4>
+                                <p class="text-text-muted text-sm font-semibold">Mon - Sat: 08:30 AM - 08:00 PM</p>
+                                <p class="text-primary text-xs font-black uppercase mt-1">Closed on Sundays</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10 pt-10 border-t border-black/10 dark:border-white/10">
+                        <p class="text-text-muted text-xs uppercase font-bold tracking-widest mb-4">Quick Actions</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://wa.me/919605891130" target="_blank" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg font-bold text-sm text-white transition-all hover:scale-105 flex items-center gap-2">
+                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="tel:+919605891130" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-bold text-sm text-white transition-all hover:scale-105 flex items-center gap-2">
+                                <i class="fa-solid fa-phone"></i> Call Now
+                            </a>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=10.9151449,75.9225126" target="_blank" class="bg-primary hover:brightness-110 px-6 py-3 rounded-lg font-bold text-sm text-white transition-all hover:scale-105 flex items-center gap-2">
+                                <i class="fa-solid fa-directions"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="h-[450px] md:h-full relative map-container group">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.8898743290915!2d75.92251262224771!3d10.91514493434354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7b1e764cc247b%3A0xe6f404e6f1f028c6!2sGENERAL%20POWER%20TOOLS!5e0!3m2!1sen!2sin!4v1769882111877!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.8898743290915!2d75.92251262224771!3d10.91514493434354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7b1e764cc247b%3A0xe6f404e6f1f028c6!2sGENERAL%20POWER%20TOOLS!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+                        class="w-full h-full border-0" 
                         allowfullscreen="" 
                         loading="lazy">
                     </iframe>
-                    
-                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                        <p class="text-black font-bold text-sm">Click to interact with map</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-black border-t border-gray-800 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-gray-500 text-sm">© 2026 General Power Tools Tirur. All rights reserved.</p>
-            <div class="flex space-x-6">
-                <a href="#" class="text-gray-500 hover:text-safety-orange transition"><i class="fa-brands fa-facebook text-xl"></i></a>
-                <a href="#" class="text-gray-500 hover:text-safety-orange transition"><i class="fa-brands fa-instagram text-xl"></i></a>
+    <!-- FOOTER -->
+    <footer class="py-16 bg-black border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="bg-gradient-to-br from-primary to-orange-600 p-2 rounded">
+                            <i class="fa-solid fa-bolt-lightning text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-heading font-black text-2xl tracking-tighter text-white">GENERAL <span class="text-primary">POWER TOOLS</span></p>
+                            <p class="text-gray-400 text-[9px] font-black uppercase tracking-[0.4em]">Tirur's Tool Experts</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-md">Your trusted partner for industrial power tools, welding equipment, and professional repair services in Tirur since 2012.</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/generalpowertools/" class="w-10 h-10 bg-white/5 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-all hover:scale-110 border border-white/10 hover:border-primary/50">
+                            <i class="fa-brands fa-facebook-f text-gray-400 hover:text-primary transition-colors"></i>
+                        </a>
+                        <a href="https://www.instagram.com/generalbasheer" class="w-10 h-10 bg-white/5 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-all hover:scale-110 border border-white/10 hover:border-primary/50">
+                            <i class="fa-brands fa-instagram text-gray-400 hover:text-primary transition-colors"></i>
+                        </a>
+                        <a href="https://wa.me/919605891130" target="_blank" class="w-10 h-10 bg-white/5 hover:bg-green-600/20 rounded-lg flex items-center justify-center transition-all hover:scale-110 border border-white/10 hover:border-green-600/50">
+                            <i class="fa-brands fa-whatsapp text-gray-400 hover:text-green-500 transition-colors"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-heading font-bold text-sm uppercase mb-6 text-white">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-primary transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> Home</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-primary transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> Products</a></li>
+                        <li><a href="#service" class="text-gray-400 hover:text-primary transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> Services</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-heading font-bold text-sm uppercase mb-6 text-white">Our Brands</h4>
+                    <ul class="space-y-3">
+                        <li class="text-gray-400 text-sm flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> HiKOKI</li>
+                        <li class="text-gray-400 text-sm flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> Bosch</li>
+                        <li class="text-gray-400 text-sm flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> Makita</li>
+                        <li class="text-gray-400 text-sm flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> DeWalt</li>
+                        <li class="text-gray-400 text-sm flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> iBELL</li>
+                        <li class="text-gray-400 text-sm flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> JCB</li>
+                        <li class="text-gray-400 text-sm flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> TOTAL</li>
+                        <li class="text-gray-400 text-sm flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> KEN</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-center items-center gap-4">
+                <p class="text-gray-500 text-xs font-semibold">
+                    © 2026 General Power Tools Tirur. All rights reserved. | Authorized HiKOKI Dealer
+                </p>
             </div>
         </div>
     </footer>
 
+    <!-- BACK TO TOP BUTTON -->
+    <button onclick="scrollToTop()" id="backToTop" class="fixed bottom-24 right-6 bg-gradient-to-br from-primary to-orange-600 p-3 rounded-full shadow-2xl opacity-0 pointer-events-none transition-all duration-300 hover:scale-110 z-50">
+        <i class="fa-solid fa-arrow-up text-white text-lg"></i>
+    </button>
+
     <script>
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+        // Toggle Logic
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+
+        // Initial Icon State
+        function updateIcons() {
+            if (document.documentElement.classList.contains('dark')) {
+                themeToggleLightIcon.classList.remove('hidden');
+                themeToggleDarkIcon.classList.add('hidden');
+            } else {
+                themeToggleDarkIcon.classList.remove('hidden');
+                themeToggleLightIcon.classList.add('hidden');
+            }
+        }
+        
+        if (themeToggleBtn) {
+            updateIcons();
+            themeToggleBtn.addEventListener('click', toggleTheme);
+        }
+        
+        if (themeToggleBtnMobile) {
+            themeToggleBtnMobile.addEventListener('click', toggleTheme);
         }
 
-        // Add scrolled state to navbar
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-lg');
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('color-theme', 'dark');
             } else {
-                nav.classList.remove('shadow-lg');
+                localStorage.setItem('color-theme', 'light');
+            }
+            if (themeToggleBtn) updateIcons();
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('active');
+            icon.classList.toggle('fa-bars-staggered');
+            icon.classList.toggle('fa-times');
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+            
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-2xl');
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                navbar.classList.remove('shadow-2xl');
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
             }
         });
+
+        // Scroll to Top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Scroll Reveal Animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal(); // Check on load
+
+        // Service Form Submit
+        function submitServiceForm() {
+            const toolType = document.getElementById('tool-service').value;
+            const message = `Hi, I need service for: ${toolType}`;
+            window.open(`https://wa.me/919605891130?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Preload critical images
+        window.addEventListener('load', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (img.loading !== 'lazy') {
+                    img.loading = 'eager';
+                }
+            });
+        });
     </script>
+
 </body>
 </html>
