@@ -12,18 +12,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- PRIMARY SEO -->
     <title>General Power Tools Tirur | Welding Machines & Car Washers Sales & Service</title>
     <meta name="description" content="Tirur's leading hub for Power Tools, Welding Machines, and Car Washers. Authorized dealers of iBELL, Bosch, Makita & DeWalt. Expert repair services and genuine spares in Malappuram.">
     <meta name="keywords" content="Power tools Tirur, Car washer service Tirur, Welding machine repair Malappuram, iBELL dealer Kerala, Pressure washer Tirur, General Power Tools, Bosch service Tirur">
     
-    <!-- OPEN GRAPH -->
     <meta property="og:title" content="General Power Tools Tirur | Sales & Service">
     <meta property="og:description" content="Authorized sales and expert service for welding machines, car washers, and industrial power tools in Tirur, Kerala.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://generalpowertoolstirur.in">
     <link rel="icon" type="image/png" href="/faviconn.png">
-    <!-- JSON-LD Local Business Schema -->
+    
+    <link rel="stylesheet" href="style.css">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -60,6 +60,7 @@
 
     <script>
         // Check local storage or system preference to set initial theme
+        // Kept in HTML to prevent "Flash of White" on load
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
@@ -86,269 +87,9 @@
             }
         }
     </script>
-
-    <style>
-        /* THEME VARIABLES */
-        :root {
-            --bg-main: #FFFFFF;
-            --bg-surface: #F3F4F6;
-            --text-main: #111827;
-            --text-muted: #4B5563;
-            --nav-bg: rgba(255, 255, 255, 0.85);
-            --border-alpha: rgba(0, 0, 0, 0.1);
-            --hero-overlay: rgba(255, 255, 255, 0.85);
-            --map-filter: none;
-        }
-
-        /* Dark Mode Override */
-        html.dark {
-            --bg-main: #0F0F0F;
-            --bg-surface: #1A1A1A;
-            --text-main: #F9FAFB;
-            --text-muted: #9CA3AF;
-            --nav-bg: rgba(15, 15, 15, 0.97);
-            --border-alpha: rgba(255, 255, 255, 0.05);
-            --hero-overlay: rgba(0, 0, 0, 0.85);
-            --map-filter: grayscale(1) invert(1) brightness(0.9) contrast(1.1);
-        }
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        /* Enhanced Glass Navigation */
-        .glass-nav { 
-            background: var(--nav-bg); 
-            backdrop-filter: blur(16px);
-            box-shadow: 0 4px 30px rgba(255, 107, 0, 0.1);
-        }
-        
-        /* Hero with Particle Effect */
-        .hero-gradient { 
-            background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), 
-                        url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1950&q=80'); 
-            background-size: cover; 
-            background-position: center;
-            background-attachment: fixed;
-            position: relative;
-        }
-        
-        .hero-gradient::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 107, 0, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
-            animation: pulseGlow 8s ease-in-out infinite;
-        }
-        
-        @keyframes pulseGlow {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
-        
-        /* Floating WhatsApp Button */
-        .floating-wa { 
-            animation: bounce 2s infinite;
-            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
-        }
-        
-        @keyframes bounce { 
-            0%, 100% { transform: translateY(0); } 
-            50% { transform: translateY(-10px); } 
-        }
-        
-        /* Enhanced Category Cards */
-        .category-card {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-alpha);
-        }
-        
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.2), transparent);
-            transition: left 0.7s;
-        }
-        
-        .category-card:hover::before {
-            left: 100%;
-        }
-        
-        .category-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 60px rgba(255, 107, 0, 0.3);
-        }
-        
-        .category-card:hover img { 
-            transform: scale(1.15) rotate(2deg); 
-        }
-        
-        /* Stats Counter Animation */
-        .stat-item {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.6s forwards;
-        }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Service Card Hover Effects */
-        .service-box {
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-alpha);
-        }
-        
-        .service-box::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #FF6B00, #FFD700);
-            transition: width 0.4s ease;
-        }
-        
-        .service-box:hover::after {
-            width: 100%;
-        }
-        
-        .service-box:hover {
-            transform: translateX(8px);
-            background: rgba(255, 107, 0, 0.05);
-        }
-        
-        /* Brand Marquee */
-        .brand-marquee {
-            animation: scroll 18s linear infinite;
-            width: max-content;
-        }
-        
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        
-        .brand-logo {
-            /* Removed grayscale filter for visibility */
-            transition: all 0.3s ease;
-        }
-        
-        .brand-logo:hover {
-            transform: scale(1.1);
-        }
-        
-        /* Testimonial Cards */
-        .testimonial-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-alpha);
-            transition: all 0.4s ease;
-        }
-        
-        .testimonial-card:hover {
-            border-color: rgba(255, 107, 0, 0.3);
-            transform: scale(1.02);
-        }
-        
-        /* CTA Pulse Animation */
-        .cta-pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.7);
-            }
-            50% {
-                box-shadow: 0 0 0 20px rgba(255, 107, 0, 0);
-            }
-        }
-        
-        /* Mobile Menu Slide */
-        #mobile-menu {
-            transform: translateY(-100%);
-            transition: transform 0.3s ease-in-out;
-        }
-        
-        #mobile-menu.active {
-            transform: translateY(0);
-        }
-        
-        /* Loading Animation */
-        .loader {
-            width: 48px;
-            height: 48px;
-            border: 5px solid #FF6B00;
-            border-bottom-color: transparent;
-            border-radius: 50%;
-            animation: rotation 1s linear infinite;
-        }
-        
-        @keyframes rotation {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Smooth Reveal on Scroll */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #0F0F0F;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #FF6B00, #FFD700);
-            border-radius: 10px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: #FF6B00;
-        }
-        
-        /* Map Theme Filter */
-        .map-container {
-            filter: var(--map-filter);
-            transition: filter 0.5s ease;
-        }
-    </style>
 </head>
 <body class="bg-secondary text-text-base font-body">
 
-    <!-- FLOATING CONTACTS -->
     <div class="fixed bottom-6 right-6 z-[100] flex flex-col gap-4">
         <a href="tel:+919605891130" class="bg-gradient-to-br from-blue-600 to-blue-700 p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 md:hidden group">
             <i class="fa-solid fa-phone text-white text-2xl group-hover:rotate-12 transition-transform"></i>
@@ -358,7 +99,6 @@
         </a>
     </div>
 
-    <!-- NAVIGATION -->
     <nav class="fixed w-full z-50 glass-nav border-b border-black/5 dark:border-white/5 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -378,7 +118,6 @@
                     <a href="#service" class="nav-link text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full text-text-base">Service</a>
                     <a href="#testimonials" class="nav-link text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full text-text-base">Reviews</a>
                     
-                    <!-- Theme Toggle (Desktop) -->
                     <button id="theme-toggle" class="p-2 rounded-lg bg-black/5 dark:bg-white/5 hover:scale-110 transition-all border border-transparent hover:border-primary/30">
                         <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden text-text-base"></i>
                         <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden text-primary"></i>
@@ -388,7 +127,6 @@
                 </div>
 
                 <div class="flex items-center gap-4 md:hidden">
-                    <!-- Theme Toggle (Mobile) -->
                     <button id="theme-toggle-mobile" class="p-2 rounded-lg bg-black/5 dark:bg-white/5 text-primary">
                         <i class="fa-solid fa-circle-half-stroke"></i>
                     </button>
@@ -398,7 +136,6 @@
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-dark-gray border-b border-white/10 p-6 space-y-4">
             <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-lg font-bold hover:text-primary transition-colors text-text-base">Home</a>
             <a href="#products" onclick="toggleMobileMenu()" class="block py-2 text-lg font-bold hover:text-primary transition-colors text-text-base">Sales</a>
@@ -408,7 +145,6 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <header id="home" class="hero-gradient min-h-screen flex items-center pt-20 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
             <div class="space-y-8 reveal">
@@ -431,7 +167,6 @@
                     </a>
                 </div>
                 
-                <!-- Stats Counter -->
                 <div class="grid grid-cols-3 gap-6 pt-8 border-t border-black/10 dark:border-white/10">
                     <div class="stat-item text-center" style="animation-delay: 0.1s">
                         <div class="text-3xl md:text-4xl font-heading font-black text-primary">25+</div>
@@ -448,7 +183,6 @@
                 </div>
             </div>
             
-            <!-- Hero Image/Visual -->
             <div class="hidden md:block relative">
                 <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl blur-3xl"></div>
                 <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=800&q=80" alt="Power Tools" class="relative rounded-3xl shadow-2xl border border-black/10 dark:border-white/10 hover:scale-105 transition-transform duration-700">
@@ -459,7 +193,6 @@
         </div>
     </header>
 
-    <!-- BRAND LINEUP -->
     <section class="py-20 bg-secondary border-y border-black/5 dark:border-white/5 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4">
             <p class="text-center text-text-muted uppercase text-xs font-black tracking-[0.3em] mb-10">Authorized Dealers Of</p>
@@ -473,7 +206,6 @@
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpeierO8Q_o3QXzS9U4paXQ0eROeNk8DlrAw&s" alt="TOTAL" class="h-8 md:h-10 brand-logo">
                     <img src="https://www.qualitytools.co.nz/images/ISL%20Industrial/klogo.jpg" alt="ken" class="h-8 md:h-10 brand-logo">
                     <img src="https://cdn11.bigcommerce.com/s-k5143b1jn4/images/stencil/1280x1280/products/666/3945/JCB_Tools_Thumbnail__79737.1713351143.png" alt="JCB" class="h-8 md:h-10 brand-logo">
-                    <!-- Duplicate logos for seamless scrolling -->
                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Bosch_logo.png" alt="Bosch" class="h-8 md:h-10 brand-logo">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Makita_Logo.svg/960px-Makita_Logo.svg.png" alt="Makita" class="h-8 md:h-10 brand-logo">
                     <img src="https://m.media-amazon.com/images/S/aplus-media/sc/2424314a-7109-461a-b0b3-d79ec5188c99.__CR0,0,600,180_PT0_SX600_V1___.jpg" alt="iBELL" class="h-10 md:h-12 brand-logo">
@@ -487,7 +219,6 @@
         </div>
     </section>
 
-    <!-- PRODUCT CATEGORIES -->
     <section id="products" class="py-24 bg-dark-gray relative overflow-hidden">
         <div class="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px]"></div>
         <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px]"></div>
@@ -500,7 +231,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Welding -->
                 <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
                     <div class="h-56 overflow-hidden relative">
                         <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
@@ -521,7 +251,6 @@
                     </div>
                 </div>
 
-                <!-- Pressure Washers -->
                 <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
                     <div class="h-56 overflow-hidden relative">
                         <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
@@ -542,7 +271,6 @@
                     </div>
                 </div>
 
-                <!-- Angle Grinders -->
                 <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
                     <div class="h-56 overflow-hidden relative">
                         <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
@@ -563,7 +291,6 @@
                     </div>
                 </div>
 
-                <!-- Power Drills -->
                 <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
                     <div class="h-56 overflow-hidden relative">
                         <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
@@ -584,7 +311,6 @@
                     </div>
                 </div>
 
-                <!-- Chainsaws -->
                 <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
                     <div class="h-56 overflow-hidden relative">
                         <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
@@ -605,7 +331,6 @@
                     </div>
                 </div>
 
-                <!-- Brush Cutters -->
                 <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
                     <div class="h-56 overflow-hidden relative">
                         <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
@@ -626,7 +351,6 @@
                     </div>
                 </div>
 
-                <!-- Air Compressors -->
                 <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
                     <div class="h-56 overflow-hidden relative">
                         <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
@@ -647,7 +371,6 @@
                     </div>
                 </div>
 
-                <!-- Heat Guns & Blowers -->
                 <div class="category-card group bg-secondary rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/50">
                     <div class="h-56 overflow-hidden relative">
                         <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
@@ -669,7 +392,6 @@
                 </div>
             </div>
             
-            <!-- Quick Features -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 reveal">
                 <div class="text-center p-6 bg-secondary/50 rounded-xl border border-black/5 dark:border-white/5 hover:border-primary/30 transition-all">
                     <i class="fa-solid fa-certificate text-primary text-3xl mb-3"></i>
@@ -691,7 +413,6 @@
         </div>
     </section>
 
-    <!-- SERVICE SECTION -->
     <section id="service" class="py-24 bg-secondary relative overflow-hidden">
         <div class="absolute -right-20 -top-20 w-80 h-80 bg-primary/5 rounded-full blur-[100px]"></div>
         <div class="max-w-7xl mx-auto px-4 relative">
@@ -804,7 +525,6 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION -->
     <section id="testimonials" class="py-24 bg-dark-gray relative overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px]"></div>
         
@@ -879,7 +599,6 @@
         </div>
     </section>
 
-    <!-- CONTACT & MAP -->
     <section id="contact" class="py-24 bg-secondary">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-3xl border border-black/5 dark:border-white/5">
@@ -955,7 +674,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="py-16 bg-black border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-12 mb-12">
@@ -1016,138 +734,11 @@
         </div>
     </footer>
 
-    <!-- BACK TO TOP BUTTON -->
     <button onclick="scrollToTop()" id="backToTop" class="fixed bottom-24 right-6 bg-gradient-to-br from-primary to-orange-600 p-3 rounded-full shadow-2xl opacity-0 pointer-events-none transition-all duration-300 hover:scale-110 z-50">
         <i class="fa-solid fa-arrow-up text-white text-lg"></i>
     </button>
-
-    <script>
-        // Toggle Logic
-        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
-
-        // Initial Icon State
-        function updateIcons() {
-            if (document.documentElement.classList.contains('dark')) {
-                themeToggleLightIcon.classList.remove('hidden');
-                themeToggleDarkIcon.classList.add('hidden');
-            } else {
-                themeToggleDarkIcon.classList.remove('hidden');
-                themeToggleLightIcon.classList.add('hidden');
-            }
-        }
-        
-        if (themeToggleBtn) {
-            updateIcons();
-            themeToggleBtn.addEventListener('click', toggleTheme);
-        }
-        
-        if (themeToggleBtnMobile) {
-            themeToggleBtnMobile.addEventListener('click', toggleTheme);
-        }
-
-        function toggleTheme() {
-            document.documentElement.classList.toggle('dark');
-            if (document.documentElement.classList.contains('dark')) {
-                localStorage.setItem('color-theme', 'dark');
-            } else {
-                localStorage.setItem('color-theme', 'light');
-            }
-            if (themeToggleBtn) updateIcons();
-        }
-
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('active');
-            icon.classList.toggle('fa-bars-staggered');
-            icon.classList.toggle('fa-times');
-        }
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            const backToTop = document.getElementById('backToTop');
-            
-            if (window.scrollY > 100) {
-                navbar.classList.add('shadow-2xl');
-                backToTop.classList.remove('opacity-0', 'pointer-events-none');
-            } else {
-                navbar.classList.remove('shadow-2xl');
-                backToTop.classList.add('opacity-0', 'pointer-events-none');
-            }
-        });
-
-        // Scroll to Top
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // Scroll Reveal Animation
-        function reveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            
-            for (let i = 0; i < reveals.length; i++) {
-                const windowHeight = window.innerHeight;
-                const elementTop = reveals[i].getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add('active');
-                }
-            }
-        }
-
-        window.addEventListener('scroll', reveal);
-        reveal(); // Check on load
-
-        // Service Form Submit
-        function submitServiceForm() {
-            const toolType = document.getElementById('tool-service').value;
-            const message = `Hi, I need service for: ${toolType}`;
-            window.open(`https://wa.me/919605891130?text=${encodeURIComponent(message)}`, '_blank');
-        }
-
-        // Smooth Scroll for Navigation Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Preload critical images
-        window.addEventListener('load', function() {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                if (img.loading !== 'lazy') {
-                    img.loading = 'eager';
-                }
-            });
-        });
-    </script>
+    
+    <script src="script.js"></script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-

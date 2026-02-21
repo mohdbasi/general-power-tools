@@ -1,0 +1,256 @@
+/* THEME VARIABLES */
+:root {
+    --bg-main: #FFFFFF;
+    --bg-surface: #F3F4F6;
+    --text-main: #111827;
+    --text-muted: #4B5563;
+    --nav-bg: rgba(255, 255, 255, 0.85);
+    --border-alpha: rgba(0, 0, 0, 0.1);
+    --hero-overlay: rgba(255, 255, 255, 0.85);
+    --map-filter: none;
+}
+
+/* Dark Mode Override */
+html.dark {
+    --bg-main: #0F0F0F;
+    --bg-surface: #1A1A1A;
+    --text-main: #F9FAFB;
+    --text-muted: #9CA3AF;
+    --nav-bg: rgba(15, 15, 15, 0.97);
+    --border-alpha: rgba(255, 255, 255, 0.05);
+    --hero-overlay: rgba(0, 0, 0, 0.85);
+    --map-filter: grayscale(1) invert(1) brightness(0.9) contrast(1.1);
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Enhanced Glass Navigation */
+.glass-nav { 
+    background: var(--nav-bg); 
+    backdrop-filter: blur(16px);
+    box-shadow: 0 4px 30px rgba(255, 107, 0, 0.1);
+}
+
+/* Hero with Particle Effect */
+.hero-gradient { 
+    background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), 
+                url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1950&q=80'); 
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.hero-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 107, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+    animation: pulseGlow 8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Floating WhatsApp Button */
+.floating-wa { 
+    animation: bounce 2s infinite;
+    box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+}
+
+@keyframes bounce { 
+    0%, 100% { transform: translateY(0); } 
+    50% { transform: translateY(-10px); } 
+}
+
+/* Enhanced Category Cards */
+.category-card {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-alpha);
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.2), transparent);
+    transition: left 0.7s;
+}
+
+.category-card:hover::before {
+    left: 100%;
+}
+
+.category-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 60px rgba(255, 107, 0, 0.3);
+}
+
+.category-card:hover img { 
+    transform: scale(1.15) rotate(2deg); 
+}
+
+/* Stats Counter Animation */
+.stat-item {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Service Card Hover Effects */
+.service-box {
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-alpha);
+}
+
+.service-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FF6B00, #FFD700);
+    transition: width 0.4s ease;
+}
+
+.service-box:hover::after {
+    width: 100%;
+}
+
+.service-box:hover {
+    transform: translateX(8px);
+    background: rgba(255, 107, 0, 0.05);
+}
+
+/* Brand Marquee */
+.brand-marquee {
+    animation: scroll 18s linear infinite;
+    width: max-content;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.brand-logo {
+    transition: all 0.3s ease;
+}
+
+.brand-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-alpha);
+    transition: all 0.4s ease;
+}
+
+.testimonial-card:hover {
+    border-color: rgba(255, 107, 0, 0.3);
+    transform: scale(1.02);
+}
+
+/* CTA Pulse Animation */
+.cta-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 20px rgba(255, 107, 0, 0);
+    }
+}
+
+/* Mobile Menu Slide */
+#mobile-menu {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+#mobile-menu.active {
+    transform: translateY(0);
+}
+
+/* Loading Animation */
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FF6B00;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Smooth Reveal on Scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0F0F0F;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #FF6B00, #FFD700);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FF6B00;
+}
+
+/* Map Theme Filter */
+.map-container {
+    filter: var(--map-filter);
+    transition: filter 0.5s ease;
+}
